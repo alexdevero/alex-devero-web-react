@@ -1,6 +1,6 @@
 # Alexdevero web - React
 
-Repository for my website alexdevero.com written in React, based on react-create-app.
+Repository for my website alexdevero.com written in React, based on [Create React App](https://github.com/facebookincubator/create-react-app).
 
 <!--
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
