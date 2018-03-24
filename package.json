@@ -2,6 +2,32 @@
   "name": "alex-devero-web",
   "version": "0.1.0",
   "private": true,
+  "license": "unlicensed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdevero/alex-devero-web-react.git"
+  },
+  "homepage": "https://github.com/alexdevero/alex-devero-web-react#readme",
+  "bugs": {
+    "url": "https://github.com/alexdevero/alex-devero-web-react/issues"
+  },
+  "author": {
+    "name": "Alex Devero",
+    "email": "deveroalex@gmail.com",
+    "url": "https://alexdevero.com/"
+  },
+  "contributors": [
+    {
+      "name": "",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">=9.x",
+    "npm": ">=5.x",
+    "yarn": ">=1.x.x"
+  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
