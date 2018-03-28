@@ -6,6 +6,8 @@ import registerServiceWorker from './registerServiceWorker'
 
 import Main from './app/Main'
 
+import './index.css'
+
 class App extends Component {
   render() {
     return (
