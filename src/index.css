@@ -1,3 +1,7 @@
+@-ms-viewport {
+  width: device-width;
+}
+
 html,
 body,
 .wrapper {
@@ -10,6 +14,7 @@ html {
   font-size: 100%;
   line-height: 1.15; /* Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+  -ms-overflow-style: scrollbar;
 }
 
 *,
@@ -19,9 +24,11 @@ html {
 }
 
 body {
+  position: relative;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  background-color: hsla(0, 0%, 0%, 1);
 }
 
 [hidden] {
