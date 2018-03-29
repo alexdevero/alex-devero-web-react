@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker'
 import Main from './app/Main'
 
 import './index.css'
+import './grid.css'
 
 class App extends Component {
   render() {
