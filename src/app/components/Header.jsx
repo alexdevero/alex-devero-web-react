@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
+import './Header.css'
 
 class Header extends Component {
   state = {
@@ -20,28 +23,25 @@ class Header extends Component {
     }
 
     return (
-      <header key="header$_1" className="header">
+      <header className="header">
         <div className="container-fluid">
           <div className="nav-wrapper">
-            <a className="nav-brand" href="/">
-              <img className="nav-brand__logo" src="./assets/images/supernova-logo-white.svg" alt="Alex Devero" />
-            </a>
+            <a className="nav-brand" href="/">DEVERO</a>
 
-            <nav className="js-nav nav" style={navStyle}>
+            {this.state.isNavOpen && <nav className="js-nav nav" style={navStyle}>
               <ul className="nav__list">
                 <li><span className="nav-closer" onClick={() => this.toggleNav()}>&times;</span></li>
-                <li><a className='nav-link' href="/work">Work</a></li>
-                <li><a className='nav-link' href="/about">About</a></li>
-                <li><a className='nav-link' href="/lab">Lab</a></li>
-                <li><a className='nav-link' href="/contact">Contact</a></li>
+                <li><Link className='nav-link' to="/work">Work</Link></li>
+                <li><Link className='nav-link' to="/about">About</Link></li>
+                <li><Link className='nav-link' to="/lab">Lab</Link></li>
+                <li><Link className='nav-link' to="/contact">Contact</Link></li>
                 <li><a className="nav-link" href="http://blog.alexdevero.com/">Blog</a></li>
                 <li><a className="nav-link" href="https://creativemarket.com/alexdevero">Store</a></li>
-                <li><a className="nav-link" href="">CZ</a></li>
+                <li><Link className="nav-link" to="/">CZ</Link></li>
               </ul>
-            </nav>
+            </nav>}
 
-            <button className="nav-opener" type="button" aria-label="Toggle navigation" onClick={() => this.toggleNav()}>
-              <span />
+            <button className={this.state.isNavOpen ? 'nav-toggler nav-toggler--open' : 'nav-toggler'} type="button" aria-label="Toggle navigation" onClick={() => this.toggleNav()}>
               <span />
               <span />
               <span />
