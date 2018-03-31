@@ -30,14 +30,13 @@ class Header extends Component {
 
             {this.state.isNavOpen && <nav className="js-nav nav" style={navStyle}>
               <ul className="nav__list">
-                <li><span className="nav-closer" onClick={() => this.toggleNav()}>&times;</span></li>
                 <li><Link className='nav-link' to="/work">Work</Link></li>
                 <li><Link className='nav-link' to="/about">About</Link></li>
                 <li><Link className='nav-link' to="/lab">Lab</Link></li>
                 <li><Link className='nav-link' to="/contact">Contact</Link></li>
                 <li><a className="nav-link" href="http://blog.alexdevero.com/">Blog</a></li>
                 <li><a className="nav-link" href="https://creativemarket.com/alexdevero">Store</a></li>
-                <li><Link className="nav-link" to="/">CZ</Link></li>
+                {/* <li><Link className="nav-link" to="/">CZ</Link></li> */}
               </ul>
             </nav>}
 

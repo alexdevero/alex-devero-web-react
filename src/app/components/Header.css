@@ -44,8 +44,12 @@ header {
 }
 
 .nav-brand {
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Devero', sans-serif;
+  font-size: 42px;
   text-decoration: none;
+  color: hsla(0, 0%, 100%, 1);
 }
 
 .nav-toggler span,
@@ -55,16 +59,24 @@ header {
 }
 
 .nav-toggler {
-  position: relative;
+  /* position: relative; */
+  position: fixed;
+  top: 22px;
+  right: 16px;
+  z-index: 9999999;
   padding: 0;
-  margin-top: 8px;
-  margin-right: 8px;
+  /* margin-top: 8px; */
+  /* margin-right: 8px; */
   display: block;
-  width: 20px;
-  height: 16px;
+  width: 28px;
+  height: 22px;
   background-color: transparent;
   border: 0;
   cursor: pointer;
+}
+
+.nav-toggler:focus {
+  outline: 0;
 }
 
 .nav-toggler span {
@@ -95,16 +107,16 @@ header {
 
 .nav-toggler--open span:first-of-type {
   top: 50%;
-  transform: rotate(45deg) translateY(-50%);
+  transform: rotate(45deg) translateY(-50%) translateX(-1%);
 }
 
 .nav-toggler--open span:nth-of-type(2) {
-  display: none;
+  opacity: 0;
 }
 
 .nav-toggler--open span:last-of-type {
   top: 50%;
-  transform: rotate(-45deg) translateY(-50%);
+  transform: rotate(-45deg) translateY(-50%) translateX(1%);
 }
 
 .nav-closer,
