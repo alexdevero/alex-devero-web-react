@@ -1,10 +1,10 @@
 .home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -90px;
   text-align: center;
-}
-
-.home-logo {
-  animation: home-logo-spin infinite 20s linear;
-  height: 80px;
+  transform: translate(-50%);
 }
 
 .home-header {
@@ -12,14 +12,15 @@
 }
 
 .home-title {
-  font-size: 1.5em;
+  margin-top: 0;
+  font-size: 56px;
+  color: var(--color-red);
 }
 
-.home-intro {
-  font-size: large;
+.home-subtitle {
+  font-size: 32px;
 }
 
-@keyframes home-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.home-subtitle:last-of-type {
+  margin-bottom: 0;
 }
