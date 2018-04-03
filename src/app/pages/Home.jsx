@@ -1,19 +1,37 @@
 import React, { Component } from 'react'
 
+// Import context and provider
+import { MyContext } from 'context'
+
+// Import translations
+import * as translationCZ from 'translations/cz'
+import * as translationEN from 'translations/en'
+
 import './Home.css'
 
+import { H1, H2, H3 } from 'app/atoms/Typography'
+
 class Home extends Component {
+  state = {
+    lang: this.context.language
+  }
   render() {
     return (
-      <div className="home">
-        <div className="home-header">
-          <h1 className="home-title">APP/UI/UX/WEB <br/>DESIGN & DEVELOPMENT</h1>
+      <MyContext.Consumer>
+          {(context) => (
+            <React.Fragment>
+              <div className="home">
+                <div className="home-header">
+                  <H1>{context.state.language === 'en' ? translationEN.home.h1 : translationCZ.home.h1}</H1>
 
-          <h2 className="home-subtitle">The best websites & digital products in this Universe.</h2>
+                  <H2>{context.state.language === 'en' ? translationEN.home.h2 : translationCZ.home.h2}</H2>
 
-          <h3 className="home-subtitle">Built for the future and delivered today.</h3>
-        </div>
-      </div>
+                  <H3>{context.state.language === 'en' ? translationEN.home.h3 : translationCZ.home.h3}</H3>
+                </div>
+              </div>
+            </React.Fragment>
+          )}
+      </MyContext.Consumer>
     )
   }
 }
