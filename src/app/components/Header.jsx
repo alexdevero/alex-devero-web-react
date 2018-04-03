@@ -30,13 +30,14 @@ class Header extends Component {
 
             {this.state.isNavOpen && <nav className="js-nav nav" style={navStyle}>
               <ul className="nav__list">
-                <li><Link className='nav-link' to="/work">Work</Link></li>
-                <li><Link className='nav-link' to="/about">About</Link></li>
-                <li><Link className='nav-link' to="/lab">Lab</Link></li>
-                <li><Link className='nav-link' to="/contact">Contact</Link></li>
+                <li><Link className='nav-link' to="/" onClick={() => this.toggleNav()}>Home</Link></li>
+                <li><Link className='nav-link' to="/work" onClick={() => this.toggleNav()}>Work</Link></li>
+                <li><Link className='nav-link' to="/about" onClick={() => this.toggleNav()}>About</Link></li>
+                <li><Link className='nav-link' to="/lab" onClick={() => this.toggleNav()}>Lab</Link></li>
+                <li><Link className='nav-link' to="/contact" onClick={() => this.toggleNav()}>Contact</Link></li>
                 <li><a className="nav-link" href="http://blog.alexdevero.com/">Blog</a></li>
                 <li><a className="nav-link" href="https://creativemarket.com/alexdevero">Store</a></li>
-                {/* <li><Link className="nav-link" to="/">CZ</Link></li> */}
+                <li><Link className="nav-link" to="/" onClick={() => this.toggleNav()}>CZ</Link></li>
               </ul>
             </nav>}
 
