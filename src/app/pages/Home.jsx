@@ -15,6 +15,7 @@ class Home extends Component {
   state = {
     lang: this.context.language
   }
+
   render() {
     return (
       <MyContext.Consumer>
