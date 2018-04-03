@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+// Import context and provider
+import { MyContext } from 'context'
+
 import './Header.css'
 
 class Header extends Component {
@@ -37,7 +40,17 @@ class Header extends Component {
                 <li><Link className='nav-link' to="/contact" onClick={() => this.toggleNav()}>Contact</Link></li>
                 <li><a className="nav-link" href="http://blog.alexdevero.com/">Blog</a></li>
                 <li><a className="nav-link" href="https://creativemarket.com/alexdevero">Store</a></li>
-                <li><Link className="nav-link" to="/" onClick={() => this.toggleNav()}>CZ</Link></li>
+                <MyContext.Consumer>
+                  {(context) => (<li>
+                    <Link
+                      className="nav-link"
+                      to="/"
+                      onClick={context.state.language === 'en' ? (lang) => context.changeLanguage('cs') : (lang) => context.changeLanguage('en')}
+                    >
+                      {context.state.language === 'en' ? 'CZ' : 'EN'}
+                    </Link>
+                  </li>)}
+                </MyContext.Consumer>
               </ul>
             </nav>}
 
