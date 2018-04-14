@@ -10,27 +10,36 @@ import About from './pages/About'
 import Lab from './pages/Lab'
 import Contact from './pages/Contact'
 
+import { MyContext } from 'context'
+
 import Header from './components/Header'
+
 
 // Component Implementation
 export class Main extends React.Component {
   render() {
     return (
-      <div className="wrapper">
-        <Header />
+      <React.Fragment>
+        <MyContext.Consumer>
+          {(context) => (
+            <div className="wrapper">
+              <Header context={context} />
 
-        <Route exact={true} path="/" component={Home}/>
-        <Route path="/work" component={Work}/>
-        <Route path="/about" component={About}/>
-        <Route path="/lab" component={Lab}/>
-        <Route path="/contact" component={Contact}/>
+              <Route exact={true} path="/" component={Home}/>
+              <Route path="/work" component={Work}/>
+              <Route path="/about" component={About}/>
+              <Route path="/lab" component={Lab}/>
+              <Route path="/contact" component={Contact}/>
 
-        {/* <FooterMenu /> */}
+              {/* <FooterMenu /> */}
 
-        {/* <CookieConsent location="bottom">
-          This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.
-        </CookieConsent> */}
-      </div>
+              {/* <CookieConsent location="bottom">
+                This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.
+              </CookieConsent> */}
+            </div>
+          )}
+        </MyContext.Consumer>
+      </React.Fragment>
     )
   }
 }

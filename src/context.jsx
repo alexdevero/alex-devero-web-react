@@ -8,7 +8,8 @@ export class MyProvider extends Component {
   state = {
     // ...this.props.initialState,
     // setGlobalState: this.setState.bind(this)
-    language: 'en'
+    language: 'en',
+    isNavOpen: false
   }
 
   render() {
@@ -17,7 +18,14 @@ export class MyProvider extends Component {
         state: this.state,
         changeLanguage: (lang) => this.setState({
           language: lang
-        })
+        }),
+        toggleNav: () => {
+          this.setState({
+            isNavOpen: !this.state.isNavOpen
+          })
+
+          document.body.classList.toggle('nav-is-open')
+        }
       }}>
         {this.props.children}
       </MyContext.Provider>

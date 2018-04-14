@@ -7,22 +7,10 @@ import { MyContext } from 'context'
 import './Header.css'
 
 class Header extends Component {
-  state = {
-    isNavOpen: false
-  }
-
-  toggleNav() {
-    this.setState({
-      isNavOpen: !this.state.isNavOpen
-    })
-
-    document.body.classList.toggle('nav-is-open')
-  }
-
   render() {
     const navStyle = {
-      display: this.state.isNavOpen && `flex`,
-      visibility: this.state.isNavOpen && `visible`
+      display: this.props.context.state.isNavOpen && `flex`,
+      visibility: this.props.context.state.isNavOpen && `visible`
     }
 
     return (
@@ -31,7 +19,7 @@ class Header extends Component {
           <div className="nav-wrapper">
             <a className="nav-brand" href="/">DEVERO</a>
 
-            {this.state.isNavOpen && <nav className="js-nav nav" style={navStyle}>
+            {this.props.context.state.isNavOpen && <nav className="js-nav nav" style={navStyle}>
               <ul className="nav__list">
                 <li><Link className='nav-link' to="/" onClick={() => this.toggleNav()}>Home</Link></li>
                 <li><Link className='nav-link' to="/work" onClick={() => this.toggleNav()}>Work</Link></li>
@@ -54,11 +42,11 @@ class Header extends Component {
               </ul>
             </nav>}
 
-            <button className={this.state.isNavOpen ? 'nav-toggler nav-toggler--open' : 'nav-toggler'} type="button" aria-label="Toggle navigation" onClick={() => this.toggleNav()}>
+            {<button className={this.props.context.state.isNavOpen ? 'nav-toggler nav-toggler--open' : 'nav-toggler'} type="button" aria-label="Toggle navigation" onClick={this.props.context.toggleNav}>
               <span />
               <span />
               <span />
-            </button>
+            </button>}
           </div>
         </div>
       </header>

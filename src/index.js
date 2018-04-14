@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
+import { injectGlobal, ThemeProvider } from 'styled-components'
 
 import registerServiceWorker from 'registerServiceWorker'
 
@@ -12,6 +12,12 @@ import Main from './app/Main'
 
 import 'index.css'
 import 'grid.css'
+
+injectGlobal`
+  .nav-is-open {
+    overflow: hidden;
+  }
+`
 
 const THEME = {
   colorBlack: 'hsla(0, 0%, 15%, 1)',
