@@ -29,7 +29,6 @@ body {
   font-size: 100%;
   line-height: 1.15; /* Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
-  background-color: hsla(0, 10%, 0%, 1);
 }
 
 [hidden] {

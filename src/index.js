@@ -13,18 +13,27 @@ import Main from './app/Main'
 import 'index.css'
 import 'grid.css'
 
-injectGlobal`
-  .nav-is-open {
-    overflow: hidden;
-  }
-`
-
 const THEME = {
+  colorBlueDark: 'hsl(218.4, 24.3%, 20.2%, 1)',
   colorBlack: 'hsla(0, 0%, 15%, 1)',
   colorRed: 'hsla(351.6, 97.2%, 42%, 1)',
   transitionDuration: '.25s',
   transitionTiming: 'ease-in-out'
 }
+
+injectGlobal`
+  body {
+    background-color: hsla(218.4, 24.3%, 20.2%, 1);
+  }
+
+  .nav-is-open {
+    overflow: hidden;
+
+    .header {
+      position: static;
+    }
+  }
+`
 
 class App extends Component {
   state = {
