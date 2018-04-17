@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { injectGlobal, ThemeProvider } from 'styled-components'
@@ -35,22 +35,16 @@ injectGlobal`
   }
 `
 
-class App extends Component {
-  state = {
-    language: 'en'
-  }
-
-  render() {
-    return (
-      <MyProvider initialState={this.state}>
-        <BrowserRouter>
-          <ThemeProvider theme={THEME}>
-            <Main />
-          </ThemeProvider>
-        </BrowserRouter>
-      </MyProvider>
-    )
-  }
+const App = () => {
+  return (
+    <MyProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={THEME}>
+          <Main />
+        </ThemeProvider>
+      </BrowserRouter>
+    </MyProvider>
+  )
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))

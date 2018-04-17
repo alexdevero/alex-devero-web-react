@@ -1,5 +1,5 @@
 // Imports
-import * as React from 'react'
+import React from 'react'
 // import CookieConsent from 'react-cookie-consent'
 
 import { Route } from 'react-router-dom'
@@ -16,30 +16,28 @@ import Header from './components/Header'
 
 
 // Component Implementation
-export class Main extends React.Component {
-  render() {
-    return (
-      <MyContext.Consumer>
-        {(context) => (
-          <div className="wrapper">
-            <Header context={context} />
+const Main = () => {
+  return (
+    <MyContext.Consumer>
+      {(context) => (
+        <div className="wrapper">
+          <Header context={context} />
 
-            <Route exact={true} path="/" component={Home}/>
-            <Route path="/work" component={Work}/>
-            <Route path="/about" component={About}/>
-            <Route path="/lab" component={Lab}/>
-            <Route path="/contact" component={Contact}/>
+          <Route exact={true} path="/" component={Home}/>
+          <Route path="/work" component={Work}/>
+          <Route path="/about" component={About}/>
+          <Route path="/lab" component={Lab}/>
+          <Route path="/contact" component={Contact}/>
 
-            {/* <FooterMenu /> */}
+          {/* <FooterMenu /> */}
 
-            {/* <CookieConsent location="bottom">
-              This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.
-            </CookieConsent> */}
-          </div>
-        )}
-      </MyContext.Consumer>
-    )
-  }
+          {/* <CookieConsent location="bottom">
+            This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.
+          </CookieConsent> */}
+        </div>
+      )}
+    </MyContext.Consumer>
+  )
 }
 
 export default Main
