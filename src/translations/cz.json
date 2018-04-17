@@ -2,9 +2,12 @@
   "about": {
     "h1": "Mé jméno je Alex Devero. Jsem podnikatel, designér & developer z České Republiky."
   },
+  "contact": {},
   "home": {
-    "h1": "APP/UI/UX/WEB",
+    "h1": "APP / UI / UX / WEB",
     "h2": "Design & Vývoj",
     "h3": "Vytvořené pro budoucnost a doručené dnes."
-  }
+  },
+  "lab": {},
+  "work": {}
 }
