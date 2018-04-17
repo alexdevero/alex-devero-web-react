@@ -53,8 +53,9 @@ const Bubble = styled.div`
   width: 650px;
   height: 650px;
 	border: #273040 solid 2px;
+  border-radius: 50%;
 	box-shadow: inset 0px 0px 40px rgba(0,0,0,.2), 0 0 90px rgba(0,0,0,.8);
-  animation: ${rotate} 16s infinite;
+  animation: ${rotate} 16s ease-out infinite;
   transform: translate(-50%, -50%)
 `
 
@@ -66,7 +67,8 @@ const BubbleBig = styled.div`
   width: 300px;
   height: 300px;
   background-color: ${props => props.theme.colorRed};
-  animation: ${rotate} 18s infinite;
+  border-radius: 50%;
+  animation: ${rotate} 18s ease-out infinite;
   transform: translate(-50%, -50%);
 `
 
@@ -89,21 +91,19 @@ class Home extends Component {
     return (
       <MyContext.Consumer>
           {(context) => (
-            <React.Fragment>
-              <HomeWrapper className="home">
-                <div className="home-header">
-                  <H1>{context.state.language === 'en' ? translationEN.home.h1 : translationCZ.home.h1}</H1>
+            <HomeWrapper className="home">
+              <div className="home-header">
+                <H1>{context.state.language === 'en' ? translationEN.home.h1 : translationCZ.home.h1}</H1>
 
-                  <H2>{context.state.language === 'en' ? translationEN.home.h2 : translationCZ.home.h2}</H2>
+                <H2>{context.state.language === 'en' ? translationEN.home.h2 : translationCZ.home.h2}</H2>
 
-                  <H3>{context.state.language === 'en' ? translationEN.home.h3 : translationCZ.home.h3}</H3>
-                </div>
+                <H3>{context.state.language === 'en' ? translationEN.home.h3 : translationCZ.home.h3}</H3>
+              </div>
 
-                <Bubble >
-                  <BubbleBig />
-                </Bubble>
-              </HomeWrapper>
-            </React.Fragment>
+              <Bubble >
+                <BubbleBig />
+              </Bubble>
+            </HomeWrapper>
           )}
       </MyContext.Consumer>
     )
