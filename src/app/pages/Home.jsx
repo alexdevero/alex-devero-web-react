@@ -6,7 +6,9 @@ import { MyContext } from 'context'
 
 // Import translations
 import * as translationCZ from 'translations/cz'
+import * as translationDE from 'translations/de'
 import * as translationEN from 'translations/en'
+import * as translationFR from 'translations/fr'
 
 import './Home.css'
 
@@ -14,13 +16,13 @@ import { H1, H2, H3 } from 'app/atoms/Typography'
 
 const randomness = 90;
 const threshold = 285;
-const anim_duration = 900; //1000 = 1s
-const randomness2 = 320;
-const threshold2 = 700;
-const anim_duration2 = 900; //1000 = 1s
-const randomness3 = 320;
-const threshold3 = 700;
-const anim_duration3 = 900; //1000 = 1s
+// const anim_duration = 900; //1000 = 1s
+// const randomness2 = 320;
+// const threshold2 = 700;
+// const anim_duration2 = 900; //1000 = 1s
+// const randomness3 = 320;
+// const threshold3 = 700;
+// const anim_duration3 = 900; //1000 = 1s
 
 const HomeWrapper = styled.div`
   position: relative;
@@ -55,7 +57,7 @@ const Bubble = styled.div`
 	border: #273040 solid 2px;
   border-radius: 50%;
 	box-shadow: inset 0px 0px 40px rgba(0,0,0,.2), 0 0 90px rgba(0,0,0,.8);
-  animation: ${rotate} 16s ease-out infinite;
+  ${'' /* animation: ${rotate} 16s ease-out infinite; */}
   transform: translate(-50%, -50%)
 `
 
@@ -68,7 +70,7 @@ const BubbleBig = styled.div`
   height: 300px;
   background-color: ${props => props.theme.colorRed};
   border-radius: 50%;
-  animation: ${rotate} 18s ease-out infinite;
+  ${'' /* animation: ${rotate} 18s ease-out infinite; */}
   transform: translate(-50%, -50%);
 `
 
@@ -92,13 +94,43 @@ class Home extends Component {
       <MyContext.Consumer>
           {(context) => (
             <HomeWrapper className="home">
-              <div className="home-header">
-                <H1>{context.state.language === 'en' ? translationEN.home.h1 : translationCZ.home.h1}</H1>
+              {
+                (() => {
+                  if (context.state.language === 'cz') {
+                    return <div className="page-header">
+                      <H1>{translationCZ.home.h1}</H1>
 
-                <H2>{context.state.language === 'en' ? translationEN.home.h2 : translationCZ.home.h2}</H2>
+                      <H2>{translationCZ.home.h2}</H2>
 
-                <H3>{context.state.language === 'en' ? translationEN.home.h3 : translationCZ.home.h3}</H3>
-              </div>
+                      <H3>{translationCZ.home.h3}</H3>
+                    </div>
+                  } else if (context.state.language === 'de') {
+                    return <div className="page-header">
+                      <H1>{translationDE.home.h1}</H1>
+
+                      <H2>{translationDE.home.h2}</H2>
+
+                      <H3>{translationDE.home.h3}</H3>
+                    </div>
+                  } else if (context.state.language === 'fr') {
+                    return <div className="page-header">
+                      <H1>{translationFR.home.h1}</H1>
+
+                      <H2>{translationFR.home.h2}</H2>
+
+                      <H3>{translationFR.home.h3}</H3>
+                    </div>
+                  } else {
+                    return <div className="home-header page-header">
+                      <H1>{translationEN.home.h1}</H1>
+
+                      <H2>{translationEN.home.h2}</H2>
+
+                      <H3>{translationEN.home.h3}</H3>
+                    </div>
+                  }
+                })()
+              }
 
               <Bubble >
                 <BubbleBig />
