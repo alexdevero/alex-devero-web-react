@@ -97,7 +97,7 @@ class Home extends Component {
               {
                 (() => {
                   if (context.state.language === 'cz') {
-                    return <div className="page-header">
+                    return <div className="home-header page-header">
                       <H1>{translationCZ.home.h1}</H1>
 
                       <H2>{translationCZ.home.h2}</H2>
@@ -105,7 +105,7 @@ class Home extends Component {
                       <H3>{translationCZ.home.h3}</H3>
                     </div>
                   } else if (context.state.language === 'de') {
-                    return <div className="page-header">
+                    return <div className="home-header page-header">
                       <H1>{translationDE.home.h1}</H1>
 
                       <H2>{translationDE.home.h2}</H2>
@@ -113,7 +113,7 @@ class Home extends Component {
                       <H3>{translationDE.home.h3}</H3>
                     </div>
                   } else if (context.state.language === 'fr') {
-                    return <div className="page-header">
+                    return <div className="home-header page-header">
                       <H1>{translationFR.home.h1}</H1>
 
                       <H2>{translationFR.home.h2}</H2>
