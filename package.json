@@ -1,6 +1,6 @@
 {
-  "name": "alex-devero-web",
-  "version": "0.1.0",
+  "name": "alex-devero-web-react",
+  "version": "0.0.1",
   "private": true,
   "license": "unlicensed",
   "repository": {
@@ -13,7 +13,6 @@
   },
   "author": {
     "name": "Alex Devero",
-    "email": "deveroalex@gmail.com",
     "url": "https://alexdevero.com/"
   },
   "contributors": [
@@ -24,9 +23,9 @@
     }
   ],
   "engines": {
-    "node": ">=9.x",
-    "npm": ">=5.x",
-    "yarn": ">=1.x.x"
+    "node": ">=10.0",
+    "npm": ">=6.0",
+    "yarn": ">=1.0.0"
   },
   "dependencies": {
     "react": "^16.5.2",
