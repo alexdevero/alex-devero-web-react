@@ -13,6 +13,7 @@ import Contact from './pages/Contact'
 import { MyContext } from 'context'
 
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 // Component Implementation
@@ -29,7 +30,7 @@ const Main = () => {
           <Route path="/lab" component={Lab}/>
           <Route path="/contact" component={Contact}/>
 
-          {/* <FooterMenu /> */}
+          <Footer />
 
           {/* <CookieConsent location="bottom">
             This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.
