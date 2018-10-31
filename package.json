@@ -7,7 +7,6 @@
     "type": "git",
     "url": "https://github.com/alexdevero/alex-devero-web-react.git"
   },
-  "homepage": ".",
   "bugs": {
     "url": "https://github.com/alexdevero/alex-devero-web-react/issues"
   },
@@ -27,19 +26,17 @@
     "npm": ">=6.0",
     "yarn": ">=1.0.0"
   },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "^7.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.0",
-    "styled-components": "^4.0.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "react-scripts": "2.1.0"
   }
 }
